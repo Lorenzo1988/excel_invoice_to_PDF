@@ -8,12 +8,16 @@ print(filepaths)
 
 #list comprehension
 for i,filepath in enumerate(filepaths):
-    num= i+1
-    print(f"\n\nfilepath: {filepath}")
-    exec(f"df_{num}=pd.read_excel(filepath,sheet_name='Sheet 1')")
-    exec(f"print(df_{num})")
+    print("\n###########")
+    print(f"--> filepath: {filepath}")
+    #METODO CLASSICO
+    df = pd.read_excel(filepath,sheet_name="Sheet 1")
+    print(df)
+    print("###########")
 
-#    df = pd.read_excel(filepath,sheet_name="Sheet 1")
-#    print(f"df: \n {df}")
-print("Pippo")
-print(df_1)
+    #METODO CON exec(). Crea dataframe con nomi diversi
+   # exec(f"df_{i+1}=pd.read_excel(filepath,sheet_name='Sheet 1')")
+   # exec(f"print(df_{i+1})")
+
+
+
